@@ -1,6 +1,8 @@
 # Tiptaplab
 
-TODO: Write a gem description
+Warning: This gem is unfinished, and should not be used just yet.
+
+The tiptaplab gem will provide easy and painless access to the TipTapLab API.
 
 ## Installation
 
@@ -18,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Don't. Not yet. It's not ready.
 
 ## Contributing
 
