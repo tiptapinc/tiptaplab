@@ -26,13 +26,31 @@ Then, create a new `Tiptaplab::Api` instance, specifying your `app_id` and `app_
 
 In addition to the required app_id and app_secret, you can specify `:api_environment`. If this is set to 'staging', the gem will use the [TipTapLab staging API][staging]. This is useful while your app is in development, but remember that API data created on staging will not be available once you switch to production mode, and that your App credentials may be different.
 
+Once the API is initialized, you can fetch or create a `Tiptaplab::User`:
+
+    user = Tiptaplab::User.create
+
+And request the user's trait scores:
+
+    > user.traits
+    => [{
+      "key": "health",
+      "score": 1.33333333333333,
+      "survey_version": 1
+    },
+    {
+      "key": "optimal_stimulation",
+      "score": 1.33333333333333,
+      "survey_version": 1
+   }]
+
 You can also make arbitrary calls to the api using the `make_call` method:
 
     api.make_call(call_path, data, method)
 
 The default `data` is an empty hash and the default method is 'GET', so you can make simple requests with just the call path:
 
-    api.make_call('traits')
+    > api.make_call('traits')
     => [{"title"=>"Susceptability", "key"=>"susceptability"}, {"title"=>"Diet", "key"=>"diet"}...
 
 

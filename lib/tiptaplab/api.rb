@@ -37,6 +37,7 @@ module Tiptaplab
         faraday.response :logger
         faraday.adapter Faraday.default_adapter
       end
+      Tiptaplab.api = self
     end
 
     def fetch_auth_token(opts = {})
@@ -79,7 +80,7 @@ module Tiptaplab
       if (response.status/100 == 2)
         JSON.parse(response.body)
       else
-        raise "Error making request. Status: #{response.status}. Check log for details."
+        response.status
       end
     end
 
