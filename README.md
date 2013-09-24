@@ -37,6 +37,7 @@ The default `data` is an empty hash and the default method is 'GET', so you can 
 
 
 [register]: https://api.tiptap.com/oauth/applications
+[staging]: http://api.staging.tiptap.com
 
 ## Contributing
 
