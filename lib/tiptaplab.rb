@@ -1,7 +1,9 @@
-require "tiptaplab/version"
-require "tiptaplab/user"
-require "tiptaplab/brand"
-
 module Tiptaplab
-  # Your code goes here...
 end
+
+%w(
+  version
+  api
+  user
+  brand
+).each{|m| require File.dirname(__FILE__) + '/tiptaplab/' + m }

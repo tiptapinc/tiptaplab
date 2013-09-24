@@ -20,7 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-Don't. Not yet. It's not ready.
+First, [register your application with the TipTapLab API][register]
+
+[register]https://api.tiptap.com/oauth/applications
+
+Then, create a new `Tiptaplab::Api` instance, specifying your `app_id` and `app_secret`:
+
+    api = Tiptaplab::Api.new(:app_id => YOUR_APP_ID, :app_secret => YOUR_APP_SECRET)
+
+In addition to the required app_id and app_secret, you can specify `:api_environment`. If this is set to 'staging', the gem will use the [TipTapLab staging API][staging]. This is useful while your app is in development, but remember that API data created on staging will not be available once you switch to production mode, and that your App credentials may be different.
+
+You can also make arbitrary calls to the api using the `make_call` method:
+
+    api.make_call(call_path, data, method)
+
+The default `data` is an empty hash and the default method is 'GET', so you can make simple requests with just the call path:
+
+    api.make_call('traits')
+    => [{"title"=>"Susceptability", "key"=>"susceptability"}, {"title"=>"Diet", "key"=>"diet"}...
+
 
 ## Contributing
 
