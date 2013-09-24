@@ -1,7 +1,5 @@
 # Tiptaplab
 
-Warning: This gem is unfinished, and should not be used just yet.
-
 The tiptaplab gem will provide easy and painless access to the TipTapLab API.
 
 ## Installation
@@ -22,8 +20,6 @@ Or install it yourself as:
 
 First, [register your application with the TipTapLab API][register]
 
-[register]https://api.tiptap.com/oauth/applications
-
 Then, create a new `Tiptaplab::Api` instance, specifying your `app_id` and `app_secret`:
 
     api = Tiptaplab::Api.new(:app_id => YOUR_APP_ID, :app_secret => YOUR_APP_SECRET)
@@ -39,6 +35,8 @@ The default `data` is an empty hash and the default method is 'GET', so you can 
     api.make_call('traits')
     => [{"title"=>"Susceptability", "key"=>"susceptability"}, {"title"=>"Diet", "key"=>"diet"}...
 
+
+[register]https://api.tiptap.com/oauth/applications
 
 ## Contributing
 
