@@ -1,6 +1,6 @@
 # Tiptaplab
 
-The tiptaplab gem will provide easy and painless access to the TipTapLab API.
+The tiptaplab gem provides easy and painless access to the TipTapLab API.
 
 ## Installation
 
@@ -36,7 +36,7 @@ The default `data` is an empty hash and the default method is 'GET', so you can 
     => [{"title"=>"Susceptability", "key"=>"susceptability"}, {"title"=>"Diet", "key"=>"diet"}...
 
 
-[register]https://api.tiptap.com/oauth/applications
+[register]: https://api.tiptap.com/oauth/applications
 
 ## Contributing
 
