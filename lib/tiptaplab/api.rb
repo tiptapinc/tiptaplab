@@ -59,7 +59,7 @@ module Tiptaplab
       @auth_token
     end
 
-    def make_call(call, data = {}, method = 'GET')
+    def make_call(call, data = {}, method = 'GET', opts = {})
       fetch_auth_token
       case method
       when 'GET'
@@ -80,6 +80,9 @@ module Tiptaplab
       if (response.status/100 == 2)
         JSON.parse(response.body)
       else
+        unless opts[:allow_status].includes(response.status)
+          raise "Unable to process API call '#{call}' - Returned status #{response.status}. Check the log for more information."
+        end
         response.status
       end
     end

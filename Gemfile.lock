@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tiptaplab (0.0.2)
+    tiptaplab (0.0.4)
 
 GEM
   remote: https://rubygems.org/

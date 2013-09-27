@@ -1,1 +1,6 @@
-describe Tiptaplab
+describe Tiptaplab do
+
+  before do
+  end
+
+end
