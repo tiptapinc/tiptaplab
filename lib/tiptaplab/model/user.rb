@@ -32,7 +32,7 @@ module Tiptaplab
 
       class << self
 
-        # Fetch basic information about the user with the specified TipTapLab ID.
+        # Fetch basic information about the user with the specified TipTap Lab ID.
         def find(ttl_id)
           response = Tiptaplab.api.make_call("users/#{ttl_id}")
           dup_resp = response.dup

@@ -1,6 +1,6 @@
 # Tiptaplab
 
-The tiptaplab gem provides easy and painless access to the TipTapLab API.
+The tiptaplab gem provides easy and painless access to the TipTap Lab API.
 
 ## Installation
 
@@ -18,22 +18,32 @@ Or install it yourself as:
 
 ## Usage
 
-First, [register your application with the TipTapLab API][register]
+First, [register your application with the TipTap Lab API][register]
 
 Then, create a new `Tiptaplab::Api` instance, specifying your `app_id` and `app_secret`:
 
     api = Tiptaplab::Api.new(:app_id => YOUR_APP_ID, :app_secret => YOUR_APP_SECRET)
 
-In addition to the required app_id and app_secret, you can specify `:api_environment`. If this is set to 'staging', the gem will use the [TipTapLab staging API][staging]. This is useful while your app is in development, but remember that API data created on staging will not be available once you switch to production mode, and that your App credentials may be different.
+In addition to the required app_id and app_secret, you can specify `:api_environment`. If this is set to 'staging', the gem will use the [TipTap Lab staging API][staging]. This is useful while your app is in development, but remember that API data created on staging will not be available once you switch to production mode, and that your App credentials may be different.
 
 Once the API is initialized, you can fetch or create a `Tiptaplab::User`:
 
-    user = Tiptaplab::User.create
+    user = Tiptaplab::Model::User.create
 
-And request the user's trait scores:
+You can optionally specify the User's attributes:
+
+    user = Tiptaplab::Model::User.create(:username => 'jsmith293931', :name => "John Q. Smith")
+
+The User will have a `ttl_id` attribute containing it's unique TipTap Lab API ID number. Either this id or the username can be used to fetch the user again later:
+
+    user = Tiptaplab::Model::User.find(43341)
+
+    user = Tiptaplab::Model::User.find('jsmith293931')
+
+Once you have a user, you can fetch it's trait scores and personality data:
 
     > user.traits
-    => [{
+     => [{
       "key": "health",
       "score": 1.33333333333333,
       "survey_version": 1
@@ -43,6 +53,13 @@ And request the user's trait scores:
       "score": 1.33333333333333,
       "survey_version": 1
    }]
+
+   > user.personality
+    => {
+      "title": "Explorer",
+      "description": "As a member of the Explorer family...",
+      "key": 'explorer'
+    }
 
 You can also make arbitrary calls to the api using the `make_call` method:
 

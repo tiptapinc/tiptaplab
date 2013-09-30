@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Tiptaplab::VERSION
   spec.authors       = ["Ian McLean"]
   spec.email         = ["engineering@tiptap.com"]
-  spec.description   = %q{TipTapLab API Integration}
-  spec.summary       = %q{Provides the ability to track and compare psychological trait information using the TipTapLab API.}
+  spec.description   = %q{TipTap Lab API Integration}
+  spec.summary       = %q{Provides the ability to track and compare psychological trait information using the TipTap Lab API.}
   spec.homepage      = "http://github.com/tiptapinc/tiptaplab"
   spec.license       = "MIT"
 

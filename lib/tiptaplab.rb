@@ -3,7 +3,7 @@ module Tiptaplab
 
   def self.api
     if @api.nil?
-      raise "API connection has not been initialized. Please set one up using the TipTapLab::Api.new() method."
+      raise "API connection has not been initialized. Please set one up using the Tiptaplab::Api.new() method."
     else
       @api
     end
